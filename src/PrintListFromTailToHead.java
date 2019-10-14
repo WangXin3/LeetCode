@@ -16,7 +16,6 @@ public class PrintListFromTailToHead {
 		System.out.println("head = " + head);
 //		printReversinglyRecursively(head);
 		printListFromTailToHeadByStack(head);
-		System.out.println("head = " + head);
 	}
 
 	/**
