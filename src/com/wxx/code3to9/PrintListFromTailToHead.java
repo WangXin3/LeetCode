@@ -17,7 +17,12 @@ public class PrintListFromTailToHead {
 		head.next.next.next = new ListNode<>(4);
 		System.out.println("head = " + head);
 //		printReversinglyRecursively(head);
-		printListFromTailToHeadByStack(head);
+//		printListFromTailToHeadByStack(head);
+		ArrayList<Integer> integers = printListFromTailToHead2(head);
+		for (Integer integer : integers) {
+			System.out.println(integer);
+		}
+
 	}
 
 	/**
@@ -54,6 +59,26 @@ public class PrintListFromTailToHead {
 		for (Integer i : array) {
 			System.out.println(i);
 		}
+	}
+
+	public static ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
+		// 头插法构建逆序链表
+		ListNode<Integer> prev = null;
+		ListNode curr = listNode;
+		while (curr != null) {
+			ListNode nextTemp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = nextTemp;
+		}
+
+		// 构建 ArrayList
+		ArrayList<Integer> ret = new ArrayList<>();
+		while (prev != null) {
+			ret.add(prev.val);
+			prev = prev.next;
+		}
+		return ret;
 	}
 
 }
