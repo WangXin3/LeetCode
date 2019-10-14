@@ -9,7 +9,6 @@ public class ReplaceSpace {
 		StringBuffer sb = new StringBuffer("A B C D E ");
 		String s = replaceSpace1(sb);
 		System.out.println("s = " + s);
-		System.out.println("s = " + s);
 	}
 
 
