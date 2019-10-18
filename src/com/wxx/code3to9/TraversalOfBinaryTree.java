@@ -104,6 +104,71 @@ public class TraversalOfBinaryTree {
 		return list;
 	}
 
+	/**
+	 * 中序遍历 非递归
+	 * @param node
+	 * @return
+	 */
+	public static List<Integer> inorderIteratively(TreeNode<Integer> node) {
+		// 栈顶元素是cur的父节点
+		Stack<TreeNode<Integer>> stack = new Stack<>();
+
+		TreeNode<Integer> cur = node;
+
+		List<Integer> list = new ArrayList<>();
+
+		while (cur != null || !stack.isEmpty()) {
+			if (cur != null) {
+				stack.push(cur);
+				cur = cur.left;
+			} else {
+				list.add(stack.peek().val);
+				cur = stack.pop().right;
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * 后续遍历 非递归
+	 * @param node
+	 * @return
+	 */
+	public static List<Integer> postorderIteratively(TreeNode<Integer> node) {
+
+		// stack栈顶元素永远为cur的父节点
+		// prevVisted用于区分是从左子树还是右子树返回的
+		Stack<TreeNode<Integer>> stack = new Stack<>();
+
+		TreeNode<Integer> cur = node;
+		TreeNode<Integer> prevVisted = null;
+
+		List<Integer> list = new ArrayList<>();
+
+
+		while (cur != null || !stack.isEmpty()) {
+			if (cur != null) {
+				stack.push(cur);
+				cur = cur.left;
+			} else {
+
+				cur = stack.peek().right;
+				if(cur != null && cur != prevVisted) {
+					stack.push(cur);
+					cur = cur.left;
+				} else {
+					prevVisted = stack.pop();
+					list.add(prevVisted.val);
+					cur = null;
+				}
+
+			}
+		}
+
+		return list;
+	}
+
 	public static void main(String[] args) {
 		/**
 		 * 					 3
@@ -135,6 +200,13 @@ public class TraversalOfBinaryTree {
 		List<Integer> list3 = preorderIteratively(root);
 		System.out.println("前序非递归 = " + list3.toString());
 
+		// 中序遍历非递归
+		List<Integer> list4 = inorderIteratively(root);
+		System.out.println("中序非递归 = " + list4);
+
+		// 后序遍历非递归
+		List<Integer> list5 = postorderIteratively(root);
+		System.out.println("后序非递归 = " + list5);
 
 	}
 }
