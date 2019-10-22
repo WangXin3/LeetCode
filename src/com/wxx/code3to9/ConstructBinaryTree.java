@@ -3,22 +3,23 @@ package com.wxx.code3to9;
 import com.wxx.utils.TreeNode;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
  * @author 她爱微笑
  * @date 2019/10/18
- * 构建二叉树
+ * 重建二叉树
  */
 public class ConstructBinaryTree {
 
 	/**
 	 * 缓存中序遍历数组每个值对应的索引
 	 */
-	private Map<Integer, Integer> indexForInOrders = new HashMap<>();
+	private Map<Integer, Integer> indexForInOrders = new LinkedHashMap<>();
 
 	/**
-	 * 构建二叉树
+	 * 重建二叉树
 	 * @param pre 前序遍历数组
 	 * @param in 中序遍历数组
 	 * @return
@@ -33,9 +34,9 @@ public class ConstructBinaryTree {
 
 	/**
 	 *
-	 * @param pre
-	 * @param preL
-	 * @param preR
+	 * @param pre 前序数组
+	 * @param preL 前序左子树长度
+	 * @param preR 前序右子树长度
 	 * @param inL
 	 * @return
 	 */
@@ -52,14 +53,25 @@ public class ConstructBinaryTree {
 		return root;
 	}
 
+	/**
+	 * 					  3
+	 * 				   /    \
+	 * 				  9	    20
+	 * 				  \	   /  \
+	 * 		           8  15   7
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		int[] pre = {3, 9, 20, 15, 7};
-		int[] in = {9, 3, 15, 20, 7};
+		/**
+		 * 前序遍历 = [3, 9, 8, 20, 15, 7]
+		 * 中序遍历 = [9, 8, 3, 15, 20, 7]
+		 */
+		int[] pre = {3, 9, 8, 20, 15, 7};
+		int[] in = {9, 8, 3, 15, 20, 7};
 
 		ConstructBinaryTree constructBinaryTree = new ConstructBinaryTree();
 		TreeNode treeNode = constructBinaryTree.reConstructBinaryTree(pre, in);
 		System.out.println("treeNode = " + treeNode);
-
 
 	}
 
