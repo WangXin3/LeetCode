@@ -34,6 +34,8 @@ public class Day03Three {
     public static void main(String[] args) {
         Day03Three day03Three = new Day03Three();
 
+        int[] nums = {2,2,3,3,3,4,4,5,5,101,101};
+        System.out.println(day03Three.deleteAndEarn(nums));
 
     }
 }
