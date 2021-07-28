@@ -1,7 +1,6 @@
 package com.wxx.random.jul;
 
-import com.wxx.utils.TreeNode;
-import com.wxx.utils.TreeNodeInt;
+import com.wxx.utils.util.TreeNode;
 
 /**
  * @author Xinxin.Wang
@@ -12,14 +11,14 @@ public class Day27 {
     int ans;
     int rootvalue;
 
-    public int findSecondMinimumValue(TreeNodeInt root) {
+    public int findSecondMinimumValue(TreeNode root) {
         ans = -1;
         rootvalue = root.val;
         dfs(root);
         return ans;
     }
 
-    public void dfs(TreeNodeInt node) {
+    public void dfs(TreeNode node) {
         if (node == null) {
             return;
         }

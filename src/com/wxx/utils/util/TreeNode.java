@@ -1,10 +1,10 @@
-package com.wxx.utils;
+package com.wxx.utils.util;
 
 /**
  * @author Xinxin.Wang
  * @since 2021/7/27 9:57
  */
-public class TreeNodeInt {
+public class TreeNode {
 
     /**
      * 当前节点值
@@ -14,19 +14,19 @@ public class TreeNodeInt {
     /**
      * 当前节点左子节点
      */
-    public TreeNodeInt left;
+    public TreeNode left;
 
     /**
      * 当前节点右子节点
      */
-    public TreeNodeInt right;
+    public TreeNode right;
 
     /**
      * 当前节点的父节点
      */
-    public TreeNodeInt parent;
+    public TreeNode parent;
 
-    public TreeNodeInt(int val) {
+    public TreeNode(int val) {
         this.val = val;
         this.left = null;
         this.right = null;
