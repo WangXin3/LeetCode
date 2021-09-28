@@ -9,7 +9,7 @@ import java.util.Map;
  * @author Xinxin.Wang
  * @since 2021/9/28 9:09
  */
-public class Day25 {
+public class Day28 {
 
     public int pathSum(TreeNode root, int targetSum) {
         HashMap<Integer, Integer> prefix = new HashMap<>();
