@@ -1,5 +1,7 @@
 package com.wxx.top100;
 
+import com.wxx.util.TreeNode;
+
 /**
  * @author Xinxin.Wang
  * @since 2022/8/2 15:02
@@ -27,24 +29,5 @@ class Solution101 {
 
         return p.val == q.val && isEq(p.left, q.right) && isEq(p.right, q.left);
 
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

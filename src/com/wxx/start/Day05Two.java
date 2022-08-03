@@ -1,6 +1,6 @@
 package com.wxx.start;
 
-import com.wxx.utils.ListNode;
+import com.wxx.util.ListNode;
 
 /**
  * @author Xinxin.Wang
@@ -25,7 +25,7 @@ public class Day05Two {
     }
 
     public static void main(String[] args) {
-        ListNode<Integer> node = new ListNode<>(1);
+        ListNode node = new ListNode(1);
 
 
 

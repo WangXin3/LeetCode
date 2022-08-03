@@ -1,6 +1,6 @@
 package com.wxx.top100;
 
-import com.wxx.utils.util.ListNode;
+import com.wxx.util.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.wxx.random.year2021.sep;
 
-import com.wxx.utils.util.TreeNode;
+import com.wxx.util.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

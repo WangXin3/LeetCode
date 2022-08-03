@@ -1,6 +1,6 @@
 package com.wxx.code3to9;
 
-import com.wxx.utils.TreeNode;
+import com.wxx.util.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -23,7 +23,7 @@ public class TraversalOfBinaryTree {
 	 * @param node
 	 * @return
 	 */
-	public static List<Integer> preorderRecursively(TreeNode<Integer> node) {
+	public static List<Integer> preorderRecursively(TreeNode node) {
 		List<Integer> list = new ArrayList<>();
 
 		if (node == null) {
@@ -42,7 +42,7 @@ public class TraversalOfBinaryTree {
 	 * @param node
 	 * @return
 	 */
-	public static List<Integer> inorderRecursively(TreeNode<Integer> node) {
+	public static List<Integer> inorderRecursively(TreeNode node) {
 		List<Integer> list = new ArrayList<>();
 
 		if (node == null) {
@@ -61,7 +61,7 @@ public class TraversalOfBinaryTree {
 	 * @param node
 	 * @return
 	 */
-	public static List<Integer> postorderRecursively(TreeNode<Integer> node) {
+	public static List<Integer> postorderRecursively(TreeNode node) {
 		List<Integer> list = new ArrayList<>();
 
 		if (node == null) {
@@ -80,11 +80,11 @@ public class TraversalOfBinaryTree {
 	 * @param node
 	 * @return
 	 */
-	public static List<Integer> preorderIteratively(TreeNode<Integer> node) {
+	public static List<Integer> preorderIteratively(TreeNode node) {
 		// stack栈顶元素永远为cur的父节点
-		Stack<TreeNode<Integer>> stack = new Stack<>();
+		Stack<TreeNode> stack = new Stack<>();
 
-		TreeNode<Integer> cur = node;
+		TreeNode cur = node;
 		List<Integer> list = new LinkedList<>();
 
 		if (node == null) {
@@ -109,11 +109,11 @@ public class TraversalOfBinaryTree {
 	 * @param node
 	 * @return
 	 */
-	public static List<Integer> inorderIteratively(TreeNode<Integer> node) {
+	public static List<Integer> inorderIteratively(TreeNode node) {
 		// 栈顶元素是cur的父节点
-		Stack<TreeNode<Integer>> stack = new Stack<>();
+		Stack<TreeNode> stack = new Stack<>();
 
-		TreeNode<Integer> cur = node;
+		TreeNode cur = node;
 
 		List<Integer> list = new ArrayList<>();
 
@@ -135,14 +135,14 @@ public class TraversalOfBinaryTree {
 	 * @param node
 	 * @return
 	 */
-	public static List<Integer> postorderIteratively(TreeNode<Integer> node) {
+	public static List<Integer> postorderIteratively(TreeNode node) {
 
 		// stack栈顶元素永远为cur的父节点
 		// prevVisted用于区分是从左子树还是右子树返回的
-		Stack<TreeNode<Integer>> stack = new Stack<>();
+		Stack<TreeNode> stack = new Stack<>();
 
-		TreeNode<Integer> cur = node;
-		TreeNode<Integer> prevVisted = null;
+		TreeNode cur = node;
+		TreeNode prevVisted = null;
 
 		List<Integer> list = new ArrayList<>();
 
@@ -178,11 +178,11 @@ public class TraversalOfBinaryTree {
 		 * 				  	15   7
 		 */
 
-		TreeNode<Integer> root = new TreeNode<>(3);
-		root.left = new TreeNode<>(9);
-		root.right = new TreeNode<>(20);
-		root.right.left = new TreeNode<>(15);
-		root.right.right = new TreeNode<>(7);
+		TreeNode root = new TreeNode(3);
+		root.left = new TreeNode(9);
+		root.right = new TreeNode(20);
+		root.right.left = new TreeNode(15);
+		root.right.right = new TreeNode(7);
 
 		// 前序遍历 递归版
 		List<Integer> list = preorderRecursively(root);

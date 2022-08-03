@@ -1,6 +1,6 @@
 package com.wxx.code3to9;
 
-import com.wxx.utils.TreeNode;
+import com.wxx.util.TreeNode;
 
 /**
  * @author 她爱微笑
@@ -20,7 +20,7 @@ public class GetNext {
 	 * @param node
 	 * @return
 	 */
-	public static TreeNode<Integer> getNextNode(TreeNode node) {
+	public static TreeNode getNextNode(TreeNode node) {
 		// 1. 如果一个节点的右子树不为空，则该节点的下一个节点为右子树的最左节点
 		if (node.right != null) {
 			TreeNode treeNode = node.right;
@@ -48,17 +48,17 @@ public class GetNext {
 	public static void main(String[] args) {
 //		中序遍历 = [9, 3, 15, 20, 7]
 
-		TreeNode<Integer> root = new TreeNode<>(3);
-		root.left = new TreeNode<>(9);
+		TreeNode root = new TreeNode(3);
+		root.left = new TreeNode(9);
 		root.left.parent = root;
-		root.right = new TreeNode<>(20);
+		root.right = new TreeNode(20);
 		root.right.parent = root;
-		root.right.left = new TreeNode<>(15);
+		root.right.left = new TreeNode(15);
 		root.right.left.parent = root.right;
-		root.right.right = new TreeNode<>(7);
+		root.right.right = new TreeNode(7);
 		root.right.right.parent = root.right;
 
-		TreeNode<Integer> nextNode = getNextNode(root.right.right);
+		TreeNode nextNode = getNextNode(root.right.right);
 		if (nextNode == null) {
 			System.out.println("该节点没有下一个节点");
 			return;

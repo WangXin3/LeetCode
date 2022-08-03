@@ -1,6 +1,6 @@
 package com.wxx.code10to19;
 
-import com.wxx.utils.ListNode;
+import com.wxx.util.ListNode;
 
 /**
  * @author 她爱微笑

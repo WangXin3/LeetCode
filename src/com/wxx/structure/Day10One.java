@@ -1,6 +1,6 @@
 package com.wxx.structure;
 
-import com.wxx.utils.util.TreeNode;
+import com.wxx.util.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

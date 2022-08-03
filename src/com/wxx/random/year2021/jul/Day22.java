@@ -1,7 +1,5 @@
 package com.wxx.random.year2021.jul;
 
-import com.wxx.utils.Node;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,5 +48,17 @@ public class Day22 {
 
     public static void main(String[] args) {
 
+    }
+}
+
+class Node {
+    public int val;
+    public Node next;
+    public Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
     }
 }

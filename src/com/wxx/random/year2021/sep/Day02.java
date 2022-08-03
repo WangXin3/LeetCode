@@ -1,6 +1,6 @@
 package com.wxx.random.year2021.sep;
 
-import com.wxx.utils.util.ListNode;
+import com.wxx.util.ListNode;
 
 /**
  * @author Xinxin.Wang

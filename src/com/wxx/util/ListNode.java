@@ -1,4 +1,4 @@
-package com.wxx.utils.util;
+package com.wxx.util;
 
 /**
  * @author 她爱微笑

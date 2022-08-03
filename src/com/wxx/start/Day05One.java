@@ -1,6 +1,6 @@
 package com.wxx.start;
 
-import com.wxx.utils.ListNode;
+import com.wxx.util.ListNode;
 
 /**
  * @author Xinxin.Wang

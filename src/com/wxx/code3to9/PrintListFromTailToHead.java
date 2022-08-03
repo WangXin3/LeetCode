@@ -1,6 +1,6 @@
 package com.wxx.code3to9;
 
-import com.wxx.utils.ListNode;
+import com.wxx.util.ListNode;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -13,10 +13,10 @@ import java.util.Stack;
 public class PrintListFromTailToHead {
 
 	public static void main(String[] args) {
-		ListNode<Integer> head = new ListNode<>(1);
-		head.next = new ListNode<>(2);
-		head.next.next = new ListNode<>(3);
-		head.next.next.next = new ListNode<>(4);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
 		System.out.println("head = " + head);
 //		printReversinglyRecursively(head);
 //		printListFromTailToHeadByStack(head);
@@ -31,7 +31,7 @@ public class PrintListFromTailToHead {
 	 * 递归版
 	 * @param node
 	 */
-	public static void printReversinglyRecursively(ListNode<Integer> node) {
+	public static void printReversinglyRecursively(ListNode node) {
 		if (node == null) {
 			return;
 		} else {
@@ -45,7 +45,7 @@ public class PrintListFromTailToHead {
 	 * 栈具有先进后出的热点
 	 * @param node
 	 */
-	public static void printListFromTailToHeadByStack(ListNode<Integer> node) {
+	public static void printListFromTailToHeadByStack(ListNode node) {
 		Stack<Integer> stack = new Stack();
 
 		while (node != null) {
@@ -65,7 +65,7 @@ public class PrintListFromTailToHead {
 
 	public static ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
 		// 头插法构建逆序链表
-		ListNode<Integer> prev = null;
+		ListNode prev = null;
 		ListNode curr = listNode;
 		while (curr != null) {
 			ListNode nextTemp = curr.next;
