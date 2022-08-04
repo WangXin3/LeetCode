@@ -1,5 +1,8 @@
 package com.wxx.util;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -69,4 +72,99 @@ public class U {
         return root;
     }
 
+
+    public static void printTree(TreeNode root) {
+        int maxLevel = getTreeDepth(root);
+        printNodeInternal(Collections.singletonList(root), 1, maxLevel);
+    }
+
+    private static int getTreeDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return 1 + Math.max(getTreeDepth(root.left), getTreeDepth(root.right));
+    }
+
+    private static void printNodeInternal(List<TreeNode> nodes, int level, int maxLevel) {
+        if (nodes == null || nodes.isEmpty() || isAllElementsNull(nodes)) {
+            return;
+        }
+
+        int floor = maxLevel - level;
+        int endLines = (int) Math.pow(2, (Math.max(floor - 1, 0)));
+        int firstSpaces = (int) Math.pow(2, (floor)) - 1;
+        int betweenSpaces = (int) Math.pow(2, (floor + 1)) - 1;
+
+        printWhitespaces(firstSpaces);
+
+        List<TreeNode> newNodes = buildNewNodes(nodes, betweenSpaces);
+        System.out.println("");
+
+        printSomething(nodes, endLines, firstSpaces);
+
+        printNodeInternal(newNodes, level + 1, maxLevel);
+    }
+
+    private static void printSomething(List<TreeNode> nodes, int endLines, int firstSpaces) {
+        for (int i = 1; i <= endLines; i++) {
+            for (TreeNode node : nodes) {
+                printWhitespaces(firstSpaces - i);
+                if (node == null) {
+                    printWhitespaces(endLines + endLines + i + 1);
+                    continue;
+                }
+
+                if (node.left != null) {
+                    System.out.print("/");
+                } else {
+                    printWhitespaces(1);
+                }
+
+                printWhitespaces(i + i - 1);
+                if (node.right != null) {
+                    System.out.print("\\");
+                } else {
+                    printWhitespaces(1);
+                }
+                printWhitespaces(endLines + endLines - i);
+            }
+
+            System.out.println("");
+        }
+    }
+
+    private static List<TreeNode> buildNewNodes(List<TreeNode> nodes, int betweenSpaces) {
+        List<TreeNode> newNodes = new ArrayList<>();
+        for (TreeNode node : nodes) {
+            if (node != null) {
+                System.out.print(node.val);
+                newNodes.add(node.left);
+                newNodes.add(node.right);
+            } else {
+                newNodes.add(null);
+                newNodes.add(null);
+                System.out.print(" ");
+            }
+
+            printWhitespaces(betweenSpaces);
+        }
+        return newNodes;
+    }
+
+    private static void printWhitespaces(int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print(" ");
+        }
+    }
+
+    private static <T> boolean isAllElementsNull(List<T> list) {
+        for (Object object : list) {
+            if (object != null) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
