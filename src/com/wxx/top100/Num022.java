@@ -16,37 +16,29 @@ public class Num022 {
 }
 
 class Solution022 {
-    public List<String> generateParenthesis(int n) {
-        List<String> combinations = new ArrayList<>();
-        generateAll(new char[2 * n], 0, combinations);
-        return combinations;
-    }
+    ArrayList[] cache = new ArrayList[100];
 
-    public void generateAll(char[] current, int pos, List<String> result) {
-        if (pos == current.length) {
-            if (valid(current)) {
-                result.add(new String(current));
-            }
+    public List<String> generate(int n) {
+        if (cache[n] != null) {
+            return cache[n];
+        }
+        ArrayList<String> ans = new ArrayList<>();
+        if (n == 0) {
+            ans.add("");
         } else {
-            current[pos] = '(';
-            generateAll(current, pos + 1, result);
-            current[pos] = ')';
-            generateAll(current, pos + 1, result);
+            for (int c = 0; c < n; ++c) {
+                for (String left : generate(c)) {
+                    for (String right : generate(n - 1 - c)) {
+                        ans.add("(" + left + ")" + right);
+                    }
+                }
+            }
         }
+        cache[n] = ans;
+        return ans;
     }
 
-    public boolean valid(char[] current) {
-        int balance = 0;
-        for (char c : current) {
-            if (c == '(') {
-                ++balance;
-            } else {
-                --balance;
-            }
-            if (balance < 0) {
-                return false;
-            }
-        }
-        return balance == 0;
+    public List<String> generateParenthesis(int n) {
+        return generate(n);
     }
 }
