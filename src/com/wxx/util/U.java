@@ -167,4 +167,11 @@ public class U {
 
         return true;
     }
+
+    public static void printIntArray(int[] o) {
+        for (Object o1 : o) {
+            System.out.print(o1.toString());
+            System.out.print(" ");
+        }
+    }
 }
