@@ -16,6 +16,7 @@ public class Day07 {
         int[] ints = solution07.exclusiveTime(1, Arrays.asList("0:start:0","0:end:0"));
         // test git
         // test git 2
+        // test git 3
         for (int anInt : ints) {
             System.out.println(anInt);
         }
