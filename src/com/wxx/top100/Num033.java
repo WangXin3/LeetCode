@@ -16,7 +16,7 @@ public class Num033 {
 
         Solution033 solution033 = new Solution033();
 
-        int[] a = {43, 54, 65, 72, 0, 2, 4, 6, 7, 11, 23, 34};
+        int[] a = {43, 54, 65, 20};
 
         System.out.println(solution033.search(a, 0));
     }
