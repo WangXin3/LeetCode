@@ -8,6 +8,15 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class U {
     /**
+     * 10 ^ 9 + 7
+     *
+     * @return /
+     */
+    public static int mod() {
+        return 1000000007;
+    }
+
+    /**
      * 字符串生成链表
      *
      * @param str /
